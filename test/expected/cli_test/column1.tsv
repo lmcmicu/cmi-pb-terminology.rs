@@ -1,0 +1,126 @@
+table	column	label	nulltype	default	datatype	structure	description
+table	table	ignore_me			table_name	primary	name of this table
+table	path				path		path to the TSV file for this table, relative to the table.tsv file
+table	type		empty		table_type		type of this table, used for tables with special meanings
+table	options		empty		options		options for this table
+table	description		empty		description		a description of this table
+column	table				table_name	from(table.table)	the table that this column belongs to
+column	column				column_name		the name of this column
+column	label		empty		label		the human-readable label for this column
+column	nulltype		empty		datatype_name	from(datatype.datatype)	the datatype for NULL values in this column
+column	default		empty		text		
+column	datatype				datatype_name	from(datatype.datatype)	the datatype for this column
+column	structure		empty		trimmed_line		schema information for this column
+column	description		empty		description		a description of this column
+datatype	datatype				datatype_name	primary	the name of this datatype
+datatype	parent	ignore_me	empty		datatype_name	tree(datatype)	the parent datatype
+datatype	condition		empty		datatype_condition		
+datatype	description		empty		trimmed_text		
+datatype	sql_type		empty		trimmed_line		
+datatype	HTML type		empty		datatype_name		
+datatype	format		empty		trimmed_line		
+rule	table				table_name		
+rule	when column				column_name		
+rule	when condition				datatype_condition		
+rule	then column				column_name		
+rule	then condition				datatype_condition		
+rule	level				word		
+rule	description		empty		description		
+table1	prefix				prefix	primary	
+table1	base				IRI	unique	
+table1	ontology IRI		empty		IRI		
+table1	version IRI		empty		IRI		
+table2	child				trimmed_line	from(table4.other_foreign_column)	
+table2	parent		empty		trimmed_line	tree(child)	
+table2	xyzzy		empty		trimmed_line		
+table2	foo		empty		integer	from(table4.numeric_foreign_column)	
+table2	bar		empty		text		
+table3	source				prefix	from(table1.prefix)	
+table3	id				CURIE	unique	
+table3	label				label	primary	
+table3	type		empty		CURIE		
+table3	parent		empty		label	tree(label)	
+table3	related		empty		trimmed_line		
+table4	foreign_column				text	unique	
+table4	other_foreign_column				text		
+table4	numeric_foreign_column				integer	primary	
+table5	text				word	primary	
+table5	int				integer		
+table5	real				real		
+table5	num				numeric		
+table6	child				integer	from(table4.numeric_foreign_column)	
+table6	parent		empty		integer	tree(child)	
+table6	xyzzy		empty		integer		
+table6	foo		empty		text		
+table6	bar		empty		integer		
+table7	zork				text	primary	
+table7	planetfall				integer		
+table8	prefix				text	from(table10.foreign_column)	
+table8	base			b	text		
+table8	ontology_IRI				text		
+table8	version_IRI				text		
+table9	child				trimmed_line	from(table10.other_foreign_column)	
+table9	parent		empty		trimmed_line		
+table9	xyzzy		empty		trimmed_line		
+table9	foo		empty	1	integer		
+table9	bar		empty		text		
+table10	foreign_column				text	unique	
+table10	other_foreign_column				text	unique	
+table10	numeric_foreign_column				integer	primary	
+table11	child				text		
+table11	parent				text		
+table11	xyzzy				text		
+table11	foo				text	primary	
+table11	bar	barmatic			text	from(view1.bar)	
+table12	foo				custom_b	from(table13.foo)	
+table12	bar				word	from(table13.bar)	
+table13	foo				text		
+table13	bar				text		
+table14	foo				integer_list	from(table15.foo)	
+table15	foo				integer	primary	
+table16	foo				match_pipe		
+table16	bar				exclude_pipe		
+table16	alago				search_pipe		
+view1	foo		empty		trimmed_line		
+view1	bar		empty		trimmed_line		
+view2	foo		empty		trimmed_line		
+view2	bar		empty		trimmed_line		
+view3	foo		empty		trimmed_line		
+view3	bar		empty		trimmed_line		
+readonly1	study_name	studyName			word		the name of the study
+readonly1	sample_number	Sample Number			integer	primary	the sample identifier
+readonly1	species	Species			label		the species of the measured individual
+readonly1	region	Region			label		the region where the measurement took place
+readonly1	island	Island			label		the island where the measurement took place
+readonly1	stage	Stage			label		the growth stage of the individual
+readonly1	individual_id	Individual ID			word	unique	the ID of the measured individual
+readonly1	clutch_completion	Clutch Completion			word		whether the measured individual's clutch of eggs was complete
+readonly1	date_egg	Date Egg			trimmed_line		the date that an egg in the clutch was observed
+readonly1	culmen_length	Culmen Length (mm)			numeric		the length of the culmen of the individual, in millimetres
+readonly1	culmen_depth	Culmen Depth (mm)			numeric		the depth of the culmen of the individual, in millimetres
+readonly1	flipper_length	Flipper Length (mm)			integer		the length of the individual's flipper, in millimetres
+readonly1	body_mass	Body Mass (g)			integer		the body mass of the individual, in grams
+readonly1	sex	Sex			word		the sex of the individual
+readonly1	delta_15_n	Delta 15 N (o/oo)			numeric		the Delta 15 N measurement
+readonly1	delta_13_c	Delta 13 C (o/oo)			numeric		the Delta 13 C measurement
+readonly1	comments	Comments	empty		line		comments on the measurement or the individual
+readonly2	study_name	studyName			word		the name of the study
+readonly2	sample_number	Sample Number			integer	primary	the sample identifier
+readonly2	species	Species			label		the species of the measured individual
+readonly2	region	Region			label		the region where the measurement took place
+readonly2	island	Island			label		the island where the measurement took place
+readonly2	stage	Stage			label		the growth stage of the individual
+readonly2	individual_id	Individual ID			word	unique	the ID of the measured individual
+readonly2	clutch_completion	Clutch Completion			word		whether the measured individual's clutch of eggs was complete
+readonly2	date_egg	Date Egg			trimmed_line		the date that an egg in the clutch was observed
+readonly2	culmen_length	Culmen Length (mm)			numeric		the length of the culmen of the individual, in millimetres
+readonly2	culmen_depth	Culmen Depth (mm)			numeric		the depth of the culmen of the individual, in millimetres
+readonly2	flipper_length	Flipper Length (mm)			integer		the length of the individual's flipper, in millimetres
+readonly2	body_mass	Body Mass (g)			integer		the body mass of the individual, in grams
+readonly2	sex	Sex			word		the sex of the individual
+readonly2	delta_15_n	Delta 15 N (o/oo)			numeric		the Delta 15 N measurement
+readonly2	delta_13_c	Delta 13 C (o/oo)			numeric		the Delta 13 C measurement
+readonly2	comments	Comments	empty		line		comments on the measurement or the individual
+readonly3	foo		empty		trimmed_line		
+readonly3	bar		empty		trimmed_line		
+table1	column_extra				datatype1a		

@@ -1,0 +1,32 @@
+datatype	parent	condition	description	sql_type	HTML type	format
+CURIE	nonspace	match(/\S+:\S+/)	a Compact URI			
+IRI	nonspace	exclude(/\s/)	an Internationalized Resource Identifier			
+column_name	trimmed_line	match(/\S([^\n]*\S)*/)	a column name			
+datatype_condition	line	exclude(/\n/)	a datatype condition specification			
+datatype_name	word	exclude(/\W/)	a datatype name			
+description	trimmed_text	match(/\S(.*\S)*/)	a brief description			
+empty	text	equals('')	the empty string	NULL		
+integer	nonspace	match(/-?\d+/)	a positive or negative integer	INTEGER		%i
+label	trimmed_line	match(/\S([^\n]*\S)*/)				
+line	text	exclude(/\n/)	a line of text		input	
+natural_number	integer	match(/\d+/)	a natural number, including zero	INTEGER		%i
+nonspace	trimmed_line	exclude(/\s/)	text without whitespace			
+numeric	nonspace	match(/-?\d+(\.\d+)?/)	a positive or negative number	NUMERIC		%.4f
+path	line	exclude(/\n/)	a path to a file			
+prefix	word	exclude(/\W/)	a prefix for a CURIE			
+real	nonspace	match(/-?\d+(\.\d+)?/)	a positive or negative real number	REAL		%.4f
+suffix	word	exclude(/\W/)	a suffix for a CURIE			
+table_name	word	exclude(/\W/)	a table name			
+table_type	word	in(table, column, datatype, rule)	a table type			
+options	trimmed_line	match(/[\w_-]+(\s+[\w_-]+)*/)	a space-separated list of words (which may contain underscores and dashes)			
+text			any text	TEXT	textarea	
+trimmed_line	line	match(/\S([^\n]*\S)*/)	a line of text that does not begin or end with whitespace			
+trimmed_text	text	exclude(/^\s+|\s+$/)	text that does not begin or end with whitespace			
+word	nonspace	exclude(/\W/)	a single word: letters, numbers, underscore			%s
+custom_a	text	match(/_\w+_/)	a word surrounded by underscores			
+custom_b	text	list(custom_a, ' ')	a list of custom_a tokens separated by spaces			
+integer_list	text	list(integer, ' ')	a list of positive or negative integers separated by spaces			
+match_pipe	text	match(/[a-z]+|[0-9]+/)	a sequence either of digits or of lowercase letters			
+exclude_pipe	text	exclude(/[a-z]+|[0-9]+/)	neither a sequence of digits nor a sequence of lowercase letters			
+search_pipe	text	search(/[a-z]+|[0-9]+/)	a string containing a sequence either of digits or of lowercase letters			
+datatype1a	text	equals(custom_str)		TEXT		

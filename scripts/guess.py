@@ -71,7 +71,9 @@ def get_random_sample(table, sample_size):
 
 
 def get_valve_config(valve_table):
-    result = subprocess.run(["./valve", "dump-config", valve_table], capture_output=True)
+    result = subprocess.run(
+        ["./valve", "--source", valve_table, "--database", "", "dump-config"], capture_output=True
+    )
     if result.returncode != 0:
         error = result.stderr.decode()
         output = result.stdout.decode()

@@ -14,6 +14,9 @@ then
     echo "Warning: Extra arguments: '$*' will be ignored"
 fi
 
+export VALVE_SOURCE=${table_defs}
+export VALVE_DATABASE=${db}
+
 pwd=$(dirname $(readlink -f $0))
 output_dir=$pwd/output
 expected_dir=$pwd/expected
@@ -25,7 +28,7 @@ do
     table_path=$pwd/output/$table_path
     table_file=$(basename $table_path)
     table=${table_file%.*}
-    ./valve save --save-dir $output_dir $table_defs $db $table
+    ./valve save --save-dir $output_dir $table
     diff -q $expected_dir/${table}.tsv ${table_path}
     ret_value=$(expr $ret_value + $?)
 done

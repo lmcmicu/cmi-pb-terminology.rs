@@ -1,0 +1,27 @@
+table	path	type	options	description
+column	test/src/column.tsv	column		Columns for all of the tables.
+datatype	test/src/datatype.tsv	datatype		Datatypes for all of the columns
+rule	test/src/rule.tsv	rule		More complex "when" rules
+table	test/src/table.tsv	table		All of the user-editable tables in this project.
+tableOne	test/src/ontology/table1.tsv			The first data table
+table2	test/src/ontology/table2.tsv			The second data table
+table3	test/src/ontology/table3.tsv			The third data table
+table4	test/src/ontology/table4.tsv			The fourth data table
+table5	test/src/ontology/table5.tsv			The fifth data table
+table6	test/src/ontology/table6.tsv			The sixth data table (like table2 but all numeric)
+table7	test/src/ontology/table7.tsv			The seventh data table
+table8	test/src/ontology/table8.tsv		foo validate_on_load conflict edit	The eightth data table
+table9	test/src/ontology/table9.tsv			The ninth data table
+table10	test/src/ontology/table10.tsv			The tenth data table
+table11	test/src/ontology/table11.tsv			The eleventh data table
+table12	test/src/ontology/table12.tsv			The twelvth data table
+table13	test/src/ontology/table13.tsv			The thirteenth data table
+table14	test/src/ontology/table14.tsv			The fourteenth data table
+table15	test/src/ontology/table15.tsv			The fifteenth data table
+table16	test/src/ontology/table16.tsv			The sixteenth data table
+view1	test/output/view1.sql		db_table db_view internal	
+view2	test/output/view2.sh		save db_view	
+view3			db_view	
+readonly1	test/output/readonly1.sh		no-edit no-save no-conflict	
+readonly2	test/src/ontology/readonly2.tsv		edit save no-edit no-save no-conflict	
+readonly3	test/output/readonly3.sql		no-edit no-save no-conflict no-validate_on_load	

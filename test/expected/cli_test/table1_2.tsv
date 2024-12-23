@@ -1,0 +1,13 @@
+prefix	base	ontology IRI	version IRI
+BFO	http://purl.obolibrary.org/obo/BFO_		
+COB	http://purl.obolibrary.org/obo/COB_	http://purl.obolibrary.org/obo/cob.owl	http://purl.obolibrary.org/obo/cob/releases/2021-09-13/cob-native.owl
+SCHMO	http://purl.obolibrary.org/obo/VO_		
+VO	http://purl.obolibrary.org/obo/SCHMO_		
+VO	http://purl.obolibrary.org/obo/VO_		
+dc	http://purl.org/dc/terms/		
+oio	http://www.geneontology.org/formats/oboInOwl#		
+owl	http://www.w3.org/2002/07/owl#		
+rdf	http://www.w3.org/1999/02/22-rdf-syntax-ns#		
+rdf	http://www.w3.org/1999/02/22-rdf-syntax-ns#		
+rdfs	http://www.w3.org/2000/01/rdf-schema#		
+xsd	http://www.w3.org/2001/XMLSchema#		
